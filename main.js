@@ -22,7 +22,6 @@ const getCurrentCity = async () => {
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
     );
     const data = await response.json();
-    console.log("data", data);
     city = data.city;
   } catch (error) {
     console.log("error", error);
@@ -35,7 +34,6 @@ const getDataForAnyCity = async () => {
     );
     if (response.status === 200) {
       const data = await response.json();
-      console.log(data);
       return data;
     } else {
       console.log("response.status", response.status);
